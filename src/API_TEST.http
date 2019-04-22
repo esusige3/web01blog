@@ -1,0 +1,89 @@
+POST http://localhost:8080/user/regit
+Content-Type: application/json
+
+{
+  "account": "esusige",
+  "password": "brokemahart",
+  "email": "swansong@dgsw",
+  "phone": "010-7273-6815",
+  "name": "desrtTree",
+  "profilePath": "D://web01blog/profiles/DragonKingSama.jpg",
+  "fileName": "DragonKingSama.jpg"
+}
+
+###
+
+POST http://localhost:8080/comment/write
+Content-Type: application/json
+
+{
+  "writerId": "1",
+  "title": "BlackPaperIs b@D!!",
+  "content": "I H@ate this thing!!! soooooooooooo baaaad!"
+
+}
+
+###
+DELETE http://localhost:8080/user/delete
+Content-Type: application/json
+
+Kuruda
+
+###
+PUT http://localhost:8080/user/modi/2
+Content-Type: application/json
+
+{
+  "account": "TheKing",
+  "password": "loveTec",
+  "email": "kol@Star",
+  "phone": "010-1232-7277",
+  "name": "MagicKrab"
+
+}
+
+###
+POST http://localhost:8080/user/login
+Content-Type: application/json
+
+{
+  "account": "Kirb",
+  "password": "superStar"
+}
+
+###
+
+PUT http://localhost:8080/comment/modi/2
+Content-Type: application/json
+
+{
+  "title": "GOOD!!!!",
+  "content": "t's so salty..."
+}
+
+###
+
+DELETE http://localhost:8080/comment/delete/2
+Content-Type: application/json
+
+
+###
+GET http://localhost:8080/user/view
+
+###
+GET http://localhost:8080/comment/view
+
+###
+POST http://localhost:8080/comment/write
+Content-Type: application/json
+
+{
+  "writerId": "5",
+  "title": "Tgabi",
+  "content": "ganadaradsad@@asa hangul",
+  "filePath": "D://web01blog/contentPics/KaNDuIt.JPG",
+  "fileName": "KaNDuIt.JPG"
+
+}
+
+###
