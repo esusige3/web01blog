@@ -2,6 +2,8 @@ package kr.hs.dgsw.web01blog.Controller;
 
 
 import kr.hs.dgsw.web01blog.Domain.Comment;
+import kr.hs.dgsw.web01blog.Protocol.ResponseFormat;
+import kr.hs.dgsw.web01blog.Protocol.ResponseType;
 import kr.hs.dgsw.web01blog.Service.CommentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -14,23 +16,38 @@ public class CommentController {
     private CommentService commentService;
 
     @GetMapping("/comment/view")
-    public List<Comment> ViewComments(){
-        return this.commentService.ViewComments();
+    public ResponseFormat ViewComments(){
+        try{
+            return new ResponseFormat(ResponseType.POST_GET, this.commentService.ViewComments());
+        }catch (Exception e){
+            return new ResponseFormat(ResponseType.FAIL,"Fail");
+        }
+
     }
 
-    @PostMapping("/comment/write")
-    public boolean UploadComment(@RequestBody Comment comment){
-        return this.commentService.UploadComment(comment);
-    }
+    /*@PostMapping("/comment/write")
+    public ResponseFormat UploadComment(@RequestBody Comment comment){
+        return new ResponseFormat(ResponseType.POST_ADD, this.commentService.UploadComment(comment));
+    }*/
 
     @PutMapping("/comment/modi/{id}")
-    public boolean ModComment(@PathVariable Long id,@RequestBody Comment comment){
-        return this.commentService.ModComment(id, comment);
+    public ResponseFormat ModComment(@PathVariable Long id,@RequestBody Comment comment){
+        try{
+            return new ResponseFormat(ResponseType.POST_UPDATE,this.commentService.ModComment(id, comment));
+        }catch (Exception e){
+            return new ResponseFormat(ResponseType.FAIL,"Fail");
+        }
+
     }
 
     @DeleteMapping("/comment/delete/{id}")
-    public boolean DeleteComment(@PathVariable Long id){
-        return this.commentService.DeleteComment(id);
+    public ResponseFormat DeleteComment(@PathVariable Long id){
+        try{
+            return new ResponseFormat(ResponseType.POST_DELETE, this.commentService.DeleteComment(id));
+        }catch (Exception e){
+            return new ResponseFormat(ResponseType.FAIL,"Fail");
+        }
+
     }
 
 

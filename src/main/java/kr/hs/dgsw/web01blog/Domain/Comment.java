@@ -8,6 +8,7 @@ import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Data
@@ -19,17 +20,21 @@ public class Comment {
     @Column(nullable = false)
     private Long writerId;//글쓴이 식별값
 
+    //
     @Column(nullable = false)
     private String title;//제목
 
-    @Column(nullable = true)
+    @Column(columnDefinition = "TEXT")
     private String content;//본문
 
-    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
-    private String filePath;//첨부사진 경로
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER,orphanRemoval = true)
+    private List<Attachment> pictures;
 
-    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
-    private String fileName;
+//    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+//    private String filePath;//첨부사진 경로
+//
+//    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+//    private String fileName;
 
     @CreationTimestamp
     @Column(updatable = false,nullable = false)

@@ -31,16 +31,16 @@ public class AttachmentController {
     @Autowired
     private CommentRepository commentRepository;
 
-    @PostMapping("/attachment/upload/user/{id}")
+    /*@PostMapping("/attachment/upload/user/{id}")
     public boolean UploadProfile(@RequestPart MultipartFile file, @PathVariable Long id){
         return attachmentService.UploadProfile(file,id);
-    }
-    @PostMapping("/attachment/upload/comment/{id}")
+    }*/
+    /*@PostMapping("/attachment/upload/comment/{id}")
     public boolean Uploadcontentfile(@RequestPart MultipartFile file,@PathVariable Long id){
         return attachmentService.UploadContentfile(file,id);
-    }
+    }*/
 
-    @GetMapping("/attachment/download/{mode}/{id}")
+   /* @GetMapping("/attachment/download/{mode}/{id}")
     public void download(HttpServletRequest request, HttpServletResponse response, @PathVariable Long id, @PathVariable int mode){
 
         if(mode == 1){
@@ -93,6 +93,6 @@ public class AttachmentController {
                 System.out.println(e.getMessage());
             }
         }
-    }
+    }*/
 
 }
