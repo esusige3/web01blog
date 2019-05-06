@@ -27,8 +27,8 @@ public class Comment {
     @Column(columnDefinition = "TEXT")
     private String content;//본문
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER,orphanRemoval = true)
-    private List<Attachment> pictures;
+//    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER,orphanRemoval = true)
+//    private List<Attachment> pictures;
 
 //    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
 //    private String filePath;//첨부사진 경로

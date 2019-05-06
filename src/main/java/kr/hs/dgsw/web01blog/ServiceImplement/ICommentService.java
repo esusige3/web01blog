@@ -21,12 +21,14 @@ public class ICommentService implements CommentService {
     private AttachmentService attachmentService;
 
     @Override
-    public boolean UploadComment(Comment comment) {
+    public Comment UploadComment(Comment comment) {
         try {
-            this.commentRepository.save(comment);
-            return true;
+
+
+            return this.commentRepository.save(comment);
+
         }catch (Exception e){
-            return false;
+            return null;
         }
     }
 

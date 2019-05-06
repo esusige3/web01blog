@@ -71,7 +71,7 @@ Content-Type: application/json
 GET http://localhost:8080/user/view
 
 ###
-GET http://localhost:8080/comment/view
+GET http://localhost:8080/comment/list
 
 ###
 POST http://localhost:8080/comment/write
@@ -79,11 +79,8 @@ Content-Type: application/json
 
 {
   "writerId": "5",
-  "title": "Tgabi",
-  "content": "ganadaradsad@@asa hangul",
-  "filePath": "D://web01blog/contentPics/KaNDuIt.JPG",
-  "fileName": "KaNDuIt.JPG"
-
+  "title": "gandara",
+  "content": "dyuruASDASDASD"
 }
 
 ###

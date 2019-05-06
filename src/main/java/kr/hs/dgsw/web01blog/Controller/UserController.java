@@ -64,15 +64,10 @@ public class UserController {
 
     }
 
-
-    @GetMapping
-    public ResponseFormat list(){
-        return new ResponseFormat(ResponseType.POST_ADD,"HELLO!");
-    }
-
     @GetMapping("/test")
-    public String testResponse(){
-        return "Response is Recalled!";
+    public String test(){
+        return "Called!";
     }
+
 
 }

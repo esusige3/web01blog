@@ -15,20 +15,19 @@ public class CommentController {
     @Autowired
     private CommentService commentService;
 
-    @GetMapping("/comment/view")
+    @GetMapping("/comment/list")
     public ResponseFormat ViewComments(){
         try{
             return new ResponseFormat(ResponseType.POST_GET, this.commentService.ViewComments());
-        }catch (Exception e){
-            return new ResponseFormat(ResponseType.FAIL,"Fail");
+        }catch (Exception e) {
+            return new ResponseFormat(ResponseType.FAIL, "Fail");
         }
-
     }
 
-    /*@PostMapping("/comment/write")
+    @PostMapping("/comment/write")
     public ResponseFormat UploadComment(@RequestBody Comment comment){
         return new ResponseFormat(ResponseType.POST_ADD, this.commentService.UploadComment(comment));
-    }*/
+    }
 
     @PutMapping("/comment/modi/{id}")
     public ResponseFormat ModComment(@PathVariable Long id,@RequestBody Comment comment){

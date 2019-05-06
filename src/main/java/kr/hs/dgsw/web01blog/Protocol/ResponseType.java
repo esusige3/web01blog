@@ -15,6 +15,7 @@ public enum ResponseType {
     POST_UPDATE         (203,"post updated"),
     POST_DELETE         (204,"post deleted"),
 
+
     ATTACHMENT_STORED   (301,"attachment stored");
 
     final private int code;
