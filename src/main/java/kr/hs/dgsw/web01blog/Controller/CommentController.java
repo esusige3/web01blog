@@ -23,6 +23,14 @@ public class CommentController {
             return new ResponseFormat(ResponseType.FAIL, "Fail");
         }
     }
+    @GetMapping("/comment/call/{id}")
+    public ResponseFormat RecallComment(@PathVariable Long id){
+        try{
+            return new ResponseFormat(ResponseType.POST_GET,this.commentService.recall(id));
+        }catch (Exception e){
+            return new ResponseFormat(ResponseType.FAIL,"fail");
+        }
+    }
 
     @PostMapping("/comment/write")
     public ResponseFormat UploadComment(@RequestBody Comment comment){

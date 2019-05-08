@@ -44,7 +44,6 @@ public class ICommentService implements CommentService {
         Optional<Comment> find = this.commentRepository.findById(id);
         if(find.isPresent()){
             Comment found = find.get();
-            found.setTitle(comment.getTitle());
             found.setContent(comment.getContent());
             this.commentRepository.save(found);
             return true;
@@ -72,5 +71,17 @@ public class ICommentService implements CommentService {
     @Override
     public void delete(Long postId) {
         this.commentRepository.deleteById(postId);
+    }
+
+    @Override
+    public Comment recall(Long id) {
+        try{
+            Optional<Comment> comment = this.commentRepository.findById(id);
+            Comment get = comment.get();
+            return get;
+        }catch (Exception e){
+            return null;
+        }
+
     }
 }

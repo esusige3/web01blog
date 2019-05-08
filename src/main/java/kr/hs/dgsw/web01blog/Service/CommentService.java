@@ -13,5 +13,6 @@ public interface CommentService {
     List<Comment> ViewComments();
     /////////////////////////////////////////////////////
     Comment get(Long writerId);
+    Comment recall(Long id);
     void delete(Long postId);
 }
