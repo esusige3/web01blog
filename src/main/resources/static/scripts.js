@@ -86,7 +86,7 @@ async function edit(button, id) {
             dataType: "json",
             data: JSON.stringify(sendFor),
             success: function () {
-                alert("일단 수정은 성공");
+                alert("수정 성공");
             },
             error: function (e) {
                 alert("수정 오류!");
